@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html>
+	<title>???</title>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href = "Mult.css">
+</head>
+
+<body>
+	<center><h2><font color="#FF0000">九九乘法表</font></h2>
+	<form name='form' id='form' method="post">
+	值：<input type='text' name='name' id='name' min="2" value="" required /><br>
+	值：<input type='text' name='nnnn' id='nnnn' min="2" value="" required /><br>
+	<input type='button' name='submit' value='送出' onclick='ttt()' />
+	</form>
+	<div id = "d1" >
+		<ul class="wrap" id="mainList">
+			<li class="l-card-title">
+				<h1>九九乘法表</h1>
+				<h2>MULTIPLICATION CHART</h2>
+			</li>
+		</ul>
+	<div/>
+	<script>
+	
+	function ttt(){
+		var n1 = Math.floor(document.getElementById("name").value);
+		var n2 = Math.floor(document.getElementById("nnnn").value);
+		var n = n1 * n2;
+		num(n1,n2);
+	}
+	
+	function num(n1,n2){
+		var str=""
+		for(var i = 2;i <= n1;i++){
+			str += "<li class='l-card'>"
+			str += "<ul class='l-card__wrap' id='line'>";
+			for(j = 1;j <= n2;j++){
+				str +="<li>"
+				str += i+"x"+j+"="+i*j;
+				str +="</li>"
+			}
+			str += "</ul>";
+			str += "</li>";
+		}
+		document.getElementById("mainList").innerHTML=str;
+	}
+	
+	</script>
+	</table></center>
+</body>
